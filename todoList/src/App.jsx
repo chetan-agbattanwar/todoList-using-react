@@ -54,6 +54,9 @@ function App() {
     </div>
 
     <List todoList={todoList} handleTodoStatus={handleTodoStatus} handleDelete={handleDelete} />
+    <center>
+      <button style={{background:'red', font:'bold'}} onClick={()=>setTodoList([])}>Clear All Todos</button>
+    </center>
     </div>
   )
 }
