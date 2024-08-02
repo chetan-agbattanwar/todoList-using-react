@@ -1,42 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  height: 100vh;
+}
+
+h1 {
+  margin: 0;
+  color: black;
   text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.adder {
+  width: 270px;
+  margin: 0px auto;
+  position: relative;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.adder input {
+  outline: none;
+  border: 3px solid white;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  height: 50px;
+  width: 250px;
+  padding-left: 10px;
+  font-weight: 800;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.adder span {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.8;
+  cursor: pointer;
+  transition: all 200ms;
+  color: white;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.adder span:hover {
+  transform: rotate(180deg);
 }
