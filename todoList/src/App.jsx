@@ -22,6 +22,19 @@ function App() {
   }
   // console.log("todoList : ",todoList);
 
+  // todoStatus functionality
+  const handleTodoStatus = (itemId)=>{
+    const updatedTodoList = todoList.map((currentTodo)=>{
+      if (currentTodo.id === itemId){
+        return {...currentTodo, todoStatus:!currentTodo.todoStatus}
+      }
+      return currentTodo
+    })
+    setTodoList(updatedTodoList)
+  }
+  console.log("todoList : ",todoList);
+  
+
   return (
     <div className='app'>
     <h1>Todo List</h1>
@@ -34,7 +47,7 @@ function App() {
       <span onClick={addItem}>+</span>
     </div>
 
-    <List todoList={todoList} />
+    <List todoList={todoList} handleTodoStatus={handleTodoStatus} />
     </div>
   )
 }

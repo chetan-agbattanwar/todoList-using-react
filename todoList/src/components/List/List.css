@@ -25,6 +25,12 @@
     width: 55px;
   }
   
-  /* .list li.done {
+  /* .list li.todoStatus {
     background-color: red;
   } */
+
+  .list li.line-through {
+    text-decoration: line-through;
+  }
+
+  
