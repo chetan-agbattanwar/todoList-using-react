@@ -4,7 +4,7 @@ import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUnch
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-function List({todoList, handleTodoStatus}) {
+function List({todoList, handleTodoStatus, handleDelete}) {
     // console.log(todoList);
     
   return (
@@ -18,7 +18,7 @@ function List({todoList, handleTodoStatus}) {
                         <CheckCircleRoundedIcon onClick={()=> handleTodoStatus(currentTodo.id)}/> : 
                         <RadioButtonUncheckedRoundedIcon onClick={()=> handleTodoStatus(currentTodo.id)} />
                     }
-                    <DeleteForeverIcon/>
+                    <DeleteForeverIcon onClick={()=>handleDelete(currentTodo.id)}/>
                 </span>
             </li>)
         }

@@ -32,8 +32,14 @@ function App() {
     })
     setTodoList(updatedTodoList)
   }
-  console.log("todoList : ",todoList);
-  
+  // console.log("todoList : ",todoList);
+
+  // delete functionality
+  const handleDelete = (itemId)=>{
+    const updatedTodoList = todoList.filter((currentTodo)=>currentTodo.id!==itemId)
+    setTodoList(updatedTodoList)
+  }
+  // console.log("todoList : ",todoList);
 
   return (
     <div className='app'>
@@ -47,7 +53,7 @@ function App() {
       <span onClick={addItem}>+</span>
     </div>
 
-    <List todoList={todoList} handleTodoStatus={handleTodoStatus} />
+    <List todoList={todoList} handleTodoStatus={handleTodoStatus} handleDelete={handleDelete} />
     </div>
   )
 }
