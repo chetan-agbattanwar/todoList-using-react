@@ -3,11 +3,23 @@ import './App.css'
 import List from './components/List/List'
 import { v4 as uuidv4 } from 'uuid';
 
-
 function App() {
 
+  const getInitialTodoList = () => {
+    const savedTodoList = localStorage.getItem('todoList');
+    return savedTodoList ? JSON.parse(savedTodoList) : []
+  };
+
   const [text, setText] = useState('')
-  const [todoList, setTodoList] = useState([])
+  const [todoList, setTodoList] = useState(getInitialTodoList)
+
+  // ()=>{
+  //   const rawTodoList = localStorage.getItem('todoList')
+  //   console.log(rawTodoList);
+  //   return JSON.parse(rawTodoList)
+  // }
+
+  localStorage.setItem('todoList',JSON.stringify(todoList) )
   // const [todoStatus, setTodoStatus] = useState(second)
   
 // add item functionality
