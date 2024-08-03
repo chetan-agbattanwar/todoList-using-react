@@ -39,11 +39,15 @@ function App() {
     }
     const itemExist = todoList.some(listItem => listItem.item === newTodoItem.item)
     // console.log(itemExist); 
+    // item exist alert
     if (itemExist){
       alert('this task already exist.')
       setText('')
     }
-    
+
+    // alert for invalid task
+    if (newTodoItem.item==='') alert('invalid task')
+
     // console.log(newTodoItem.item!=='');
     if (!itemExist && newTodoItem.item!=='') {
       setText('')
