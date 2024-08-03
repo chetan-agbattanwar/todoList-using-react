@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import List from './components/List/List'
 import { v4 as uuidv4 } from 'uuid';
+import CurrentDate from './components/CurrentDate';
 
 function App() {
 
@@ -24,10 +25,17 @@ function App() {
   
 // add item functionality
   const addItem = ()=>{
+    const currentDate = new Date()
+    const months = [
+      "January", "February", "March", "April", "May", "June", 
+      "July", "August", "September", "October", "November", "December"
+  ]
     const newTodoItem = {
       id:uuidv4(),
       item:text,
-      todoStatus : false
+      todoStatus : false,
+      date : `${currentDate.getDate()}-${months[currentDate.getMonth()]}-${currentDate.getFullYear()}`,
+      time : currentDate.toLocaleTimeString()
     }
     const itemExist = todoList.some(listItem => listItem.item === newTodoItem.item)
     // console.log(itemExist); 
@@ -61,6 +69,8 @@ function App() {
   return (
     <div className='app'>
     <h1>Todo List</h1>
+    
+    <CurrentDate/>
 
     <div className="adder">
       <input type="text" 
