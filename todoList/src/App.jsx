@@ -39,6 +39,11 @@ function App() {
     }
     const itemExist = todoList.some(listItem => listItem.item === newTodoItem.item)
     // console.log(itemExist); 
+    if (itemExist){
+      alert('this task already exist.')
+      setText('')
+    }
+    
     // console.log(newTodoItem.item!=='');
     if (!itemExist && newTodoItem.item!=='') {
       setText('')
@@ -69,7 +74,7 @@ function App() {
   return (
     <div className='app'>
     <h1>Todo List</h1>
-    
+
     <CurrentDate/>
 
     <div className="adder">
