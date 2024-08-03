@@ -32,8 +32,10 @@ function App() {
     const itemExist = todoList.some(listItem => listItem.item === newTodoItem.item)
     // console.log(itemExist); 
     // console.log(newTodoItem.item!=='');
-    if (!itemExist && newTodoItem.item!=='') return setTodoList([...todoList, newTodoItem])
-    setText('')
+    if (!itemExist && newTodoItem.item!=='') {
+      setText('')
+      return setTodoList([...todoList, newTodoItem])
+    }
   }
   // console.log("todoList : ",todoList);
 
