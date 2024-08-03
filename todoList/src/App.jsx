@@ -29,7 +29,9 @@ function App() {
       item:text,
       todoStatus : false
     }
-    setTodoList([...todoList, newTodoItem])
+    const itemExist = todoList.some(listItem => listItem.item === newTodoItem.item)
+    console.log(itemExist);
+    if (!itemExist) return setTodoList([...todoList, newTodoItem])
     setText('')
   }
   // console.log("todoList : ",todoList);
